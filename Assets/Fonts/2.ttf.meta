@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 0749dc0aca4338f4581d9c63b84466b0
+timeCreated: 1527378127
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Bickham Script Two
+  fontNames:
+  - Bickham Script Two
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

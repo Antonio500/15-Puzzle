@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: fcae7a47a9ba4454f84ed3def22a9372
+timeCreated: 1527378128
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: 'Poetica Chancery '
+  fontNames:
+  - 'Poetica Chancery '
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

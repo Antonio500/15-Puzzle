@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 8b096dd758b37ae46bea511ef7925b97
+timeCreated: 1527378127
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: 'Poetica Lyrica '
+  fontNames:
+  - 'Poetica Lyrica '
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

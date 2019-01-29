@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 1207a436525563244b4ad087b8da6c38
+timeCreated: 1527378127
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: 'Apollonia Modern '
+  fontNames:
+  - 'Apollonia Modern '
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
