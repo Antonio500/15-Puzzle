@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class RefreshScript : MonoBehaviour
 {
-    public GameObject ObjectGameControl;
+    public GameObject objectGameControl;
 
-    void OnMouseUpAsButton()
+    public void OnClick()
     {
-        ObjectGameControl.GetComponent<GameControl>().StartNewGame();
-        ObjectGameControl.GetComponent<TextScript>().Start();
+        objectGameControl.GetComponent<GameControl>().StartNewGame();
+        objectGameControl.GetComponent<TextScript>().Start();
     }
 }

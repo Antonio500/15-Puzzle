@@ -4,58 +4,61 @@ using System;
 
 public class TextScript : MonoBehaviour
 {
-    public GameObject ObjectGameControl;
-    public Text TimeText;
-    public Text CountClickText;
-    public Text WinText;
+    public GameObject objectGameControl;
+    public Text timeText;
+    public Text countClickText;
+    public Text winText;
+    public GameObject winTextObj;
 
-    private DateTime StartTime;
-    private TimeSpan TimerTime;
-    private bool StartFlag;
+    private DateTime startTime;
+    private TimeSpan timerTime;
+    private bool startFlag;
 
-    public GameObject WinAudio;
-    private bool SoundFlag = true;
+    public GameObject winAudio;
+    private bool soundFlag = true;
 
     public void Start()
     {
-        CountClickText.text = "0";
-        TimeText.text = "0:00";
-        WinText.text = "";
-        StartFlag = true;
-        SoundFlag = true;
+        countClickText.text = "0";
+        timeText.text = "0:00";
+        winText.text = "";
+        winTextObj.SetActive(false);
+        startFlag = true;
+        soundFlag = true;
     }
 
     void Update()
     {
-        if (ObjectGameControl.GetComponent<GameControl>().WinFlag)
+        if (objectGameControl.GetComponent<GameControl>().WinFlag)
         {
-            if (SoundFlag)
+            if (soundFlag)
             {
-                WinText.text = "Вы выйграли!!!";
-                WinAudio.GetComponent<AudioSource>().Play();
-                SoundFlag = false;
-                // Подгружаем текущие значения
-                CountClickText.text = ObjectGameControl.GetComponent<GameControl>().countClick.ToString();
-                if (TimerTime.Seconds < 10)
-                    TimeText.text = TimerTime.Minutes.ToString() + ":0" + TimerTime.Seconds.ToString();
+                winText.text = "Победа!!!";
+                winTextObj.SetActive(true);
+                winAudio.GetComponent<AudioSource>().Play();
+                soundFlag = false;
+                // Подгружаем последние значения
+                countClickText.text = objectGameControl.GetComponent<GameControl>().countClick.ToString();
+                if (timerTime.Seconds < 10)
+                    timeText.text = timerTime.Minutes.ToString() + ":0" + timerTime.Seconds.ToString();
                 else
-                    TimeText.text = TimerTime.Minutes.ToString() + ":" + TimerTime.Seconds.ToString();
+                    timeText.text = timerTime.Minutes.ToString() + ":" + timerTime.Seconds.ToString();
             }
             return;
         }
 
-        if (ObjectGameControl.GetComponent<GameControl>().countClick == 0) return;
-        if (ObjectGameControl.GetComponent<GameControl>().countClick == 1 && StartFlag)
+        if (objectGameControl.GetComponent<GameControl>().countClick == 0) return;
+        if (objectGameControl.GetComponent<GameControl>().countClick == 1 && startFlag)
         {
-            StartTime = DateTime.Now;
-            StartFlag = false;
+            startTime = DateTime.Now;
+            startFlag = false;
         }
-        TimerTime = DateTime.Now - StartTime;
+        timerTime = DateTime.Now - startTime;
         // Подгружаем текущие значения
-        CountClickText.text = ObjectGameControl.GetComponent<GameControl>().countClick.ToString();
-        if (TimerTime.Seconds < 10)
-            TimeText.text = TimerTime.Minutes.ToString() + ":0" + TimerTime.Seconds.ToString();
+        countClickText.text = objectGameControl.GetComponent<GameControl>().countClick.ToString();
+        if (timerTime.Seconds < 10)
+            timeText.text = timerTime.Minutes.ToString() + ":0" + timerTime.Seconds.ToString();
         else
-            TimeText.text = TimerTime.Minutes.ToString() + ":" + TimerTime.Seconds.ToString();
+            timeText.text = timerTime.Minutes.ToString() + ":" + timerTime.Seconds.ToString();
     }
 }

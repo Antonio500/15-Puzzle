@@ -2,11 +2,14 @@
 
 public class GameControl : MonoBehaviour
 {
-    public int countClick = 0;
-    public int size = 3;
-    public int emptyX, emptyY;
+    public int size;
+    public GameObject[] listCell;
     public GameObject[,] arrayCell;
+    public int emptyX, emptyY;
+    public int randNumber ;
+    public int countClick = 0;
     public bool WinFlag = false;
+    int[,] array;
 
     void Start()
     {
@@ -14,160 +17,161 @@ public class GameControl : MonoBehaviour
         StartNewGame();
     }
 
-    void Update()
+    public void CellClick(string nameCell)
     {
-        if (WinFlag) return;                                            // Закончена ли игра?      
-        if (!Input.GetMouseButtonDown(0)) return;                       // Клик    
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);    // Нажат ли объект?
-        RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
-        if (!hit) return;
-
+        // Закончена ли игра?      
+        if (WinFlag) return;
+        // Находимм ячейку
         int newPosX = 0, newPosY = 0;
-        SearchClick(hit.collider.name, ref newPosX, ref newPosY);
-
+        GetPosition(int.Parse(nameCell), ref newPosX, ref newPosY);
         // Нужно ли двигать ячейку
         // Если да, двигаем циклично пустою ячейку до нажатой 
-        int tempPos;
         if (newPosY == emptyY)
         {
             if (newPosX == emptyX) return;
-            tempPos = emptyX;
-            do
+            int tempPos = emptyX;
+            while (tempPos != newPosX)
             {
-                if (tempPos < newPosX)
-                    tempPos++;
-                else
-                    tempPos--;
-
+                if (tempPos < newPosX) tempPos++;
+                else tempPos--;
                 SwapCell(tempPos, emptyY);
-            } while (tempPos != newPosX);
-
+            }
             countClick++;
-            WinFlag = CheckRight();
+            WinFlag = СheckСorrectness();
         }
         else if (newPosX == emptyX)
         {
             if (newPosY == emptyY) return;
-            tempPos = emptyY;
-            do
+            int tempPos = emptyY;
+            while (tempPos != newPosY)
             {
-                if (tempPos < newPosY)
-                    tempPos++;
-                else
-                    tempPos--;
-
+                if (tempPos < newPosY) tempPos++;
+                else tempPos--;
                 SwapCell(emptyX, tempPos);
-            } while (tempPos != newPosY);
-            countClick++;
-            WinFlag = CheckRight();
-        }
-    }
-
-    // Ищет координты ячейки по имени (в данном случае нажатого элемента)
-    void SearchClick(string searchName, ref int searchX, ref int searchY)
-    {
-        for (int i = 0; i < size; i++)
-        {
-            for (int j = 0; j < size; j++)
-            {
-                if (arrayCell[i, j].name != searchName) continue;
-                searchX = i;
-                searchY = j;
-                return;
-
             }
+            countClick++;
+            WinFlag = СheckСorrectness();
         }
-    }
 
-    // Создает массив с заданным размером и привязывает объекты (пустая ячейка находится в конце).
+    }
+    // Привязывает объекты в массиве
     void CreateArray()
     {
+        array = new int[size, size];
         arrayCell = new GameObject[size, size];
-        int count = 1;
-        for (int i = 0; i < size; i++)
+        for (int i = 0, count = 0; i < size; i++)
         {
-            for (int j = 0; j < size; j++)
+            for (int j = 0; j < size; j++, count++)
             {
-                if (count == size * size)
-                    break;
-                arrayCell[i, j] = GameObject.Find(count.ToString());
-                count++;
+                array[i, j] = count + 1;
+                arrayCell[i, j] = listCell[count];
             }
         }
-        arrayCell[size - 1, size - 1] = GameObject.Find("0");
         emptyX = size - 1;
         emptyY = size - 1;
     }
 
-
     // Проверяет упорядоченность массива.
-    bool CheckRight()
+    bool СheckСorrectness()
     {
-        int count = 1;
-        for (int i = 0; i < size; i++)
+        for (int i = 0, count = 1; i < size; i++)
         {
-            for (int j = 0; j < size; j++)
+            for (int j = 0; j < size; j++, count++)
             {
-                if (arrayCell[i, j].name != count.ToString())
-                {
-                    if (i == size - 1 && j == size - 1)
-                    {
-                        Debug.Log("Вы победили!");
-                        return true;
-                    }
-                    Debug.Log("Пазл не собран =(");
-                    return false;
-                }
-                count++;
+                if (int.Parse(arrayCell[i, j].name) != count) { return false; }
             }
         }
-        return false;
+        Debug.Log("Вы победили!");
+        return true;
     }
 
     //Меняет данную ячейку с пустой
     void SwapCell(int moveX, int moveY)
     {
-        Vector3 temp;
-        GameObject tempObject;
+        // Запоминаем позицию сдвигаемой ячейки
+        Vector2 anchorMinTmp = arrayCell[emptyX, emptyY].GetComponent<RectTransform>().anchorMin,
+                anchorMaxTmp = arrayCell[emptyX, emptyY].GetComponent<RectTransform>().anchorMax;
+        // Передвигаем ее на место пустой
+        arrayCell[emptyX, emptyY].GetComponent<RectTransform>().anchorMin = arrayCell[moveX, moveY].GetComponent<RectTransform>().anchorMin;
+        arrayCell[emptyX, emptyY].GetComponent<RectTransform>().anchorMax = arrayCell[moveX, moveY].GetComponent<RectTransform>().anchorMax;
+        // Ставим пустую на место сдвигаемой
+        arrayCell[moveX, moveY].GetComponent<RectTransform>().anchorMin = anchorMinTmp;
+        arrayCell[moveX, moveY].GetComponent<RectTransform>().anchorMax = anchorMaxTmp;
 
-        // Передвигаем ячейки
-        temp = arrayCell[emptyX, emptyY].transform.position;
-        arrayCell[emptyX, emptyY].transform.position = arrayCell[moveX, moveY].transform.position;
-        arrayCell[moveX, moveY].transform.position = temp;
-
-        // Меняем местами объекты во вспомогательной таблице
-        tempObject = arrayCell[emptyX, emptyY];
+        // Меняем местами объекты в самой таблице
+        GameObject tempObject = arrayCell[emptyX, emptyY];
         arrayCell[emptyX, emptyY] = arrayCell[moveX, moveY];
         arrayCell[moveX, moveY] = tempObject;
+
+        //Меняем местами объекты во всмомогательной таблице
+        int tmp = array[emptyX, emptyY];
+        array[emptyX, emptyY] = array[moveX, moveY];
+        array[moveX, moveY] = tmp;
+
+        // Запоминаем место пустой ячейки
         emptyX = moveX;
         emptyY = moveY;
     }
 
     // Перемешивает массив
-    void RandomPuzzle(int sizePuzzle)
+    void RandomPuzzle(int moveNumber)
     {
-        for (int i = 0; i < sizePuzzle * 100; i++)
+        for (int i = 0; i < moveNumber; i++)
         {
+            int newPosX, newPosY;
             int K = Random.Range(0, 2);
             if (K == 0)
             {
-                SwapCell(Random.Range(0, size), emptyY);
+                newPosY = emptyY;
+                newPosX = Random.Range(0, size);
+                if (newPosX == emptyX) return;
+                int tempPos = emptyX;
+                while (tempPos != newPosX)
+                {
+                    if (tempPos < newPosX) tempPos++;
+                    else tempPos--;
+                    SwapCell(tempPos, emptyY);
+                }
             }
             else
             {
-                SwapCell(emptyX, Random.Range(0, size));
+                newPosX = emptyX;
+                newPosY = Random.Range(0, size);
+                if (newPosY == emptyY) return;
+                int tempPos = emptyY;
+                while (tempPos != newPosY)
+                {
+                    if (tempPos < newPosY) tempPos++;
+                    else tempPos--;
+                    SwapCell(emptyX, tempPos);
+                }
             }
         }
     }
 
+    bool GetPosition(int cell, ref int x, ref int y)
+    {
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                if (array[i, j] == cell)
+                {
+                    x = i;
+                    y = j;
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     public void StartNewGame()
     {
-        WinFlag = false;   
+        WinFlag = false;
         countClick = 0;
-        //RandomPuzzle();
-        SwapCell(2, 1);
-        SwapCell(2, 0);
-        Debug.Log("New Game");
+        RandomPuzzle(randNumber);
+        Debug.Log("New Game " + randNumber);
     }
 }
 
