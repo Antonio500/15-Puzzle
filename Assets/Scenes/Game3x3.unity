@@ -611,6 +611,7 @@ GameObject:
   - component: {fileID: 533872713}
   - component: {fileID: 533872716}
   - component: {fileID: 533872717}
+  - component: {fileID: 533872718}
   m_Layer: 0
   m_Name: 5
   m_TagString: Untagged
@@ -750,6 +751,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectGameControl: {fileID: 661831168}
   thisCell: {fileID: 533872711}
+--- !u!111 &533872718
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 533872711}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 9605be7a27172034494f3391d57e3e7f, type: 2}
+  - {fileID: 7400000, guid: 14eae988fc7160c4ea26c107f886aa89, type: 2}
+  - {fileID: 7400000, guid: e27563c3d2508df4d8571d6daa9bb8f6, type: 2}
+  - {fileID: 7400000, guid: a13dfedbcdb92714bbcf1b59c1750f8c, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &538159596
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,6 +782,7 @@ GameObject:
   - component: {fileID: 538159598}
   - component: {fileID: 538159601}
   - component: {fileID: 538159602}
+  - component: {fileID: 538159603}
   m_Layer: 0
   m_Name: 4
   m_TagString: Untagged
@@ -902,6 +922,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectGameControl: {fileID: 661831168}
   thisCell: {fileID: 538159596}
+--- !u!111 &538159603
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 538159596}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 9605be7a27172034494f3391d57e3e7f, type: 2}
+  - {fileID: 7400000, guid: 14eae988fc7160c4ea26c107f886aa89, type: 2}
+  - {fileID: 7400000, guid: e27563c3d2508df4d8571d6daa9bb8f6, type: 2}
+  - {fileID: 7400000, guid: a13dfedbcdb92714bbcf1b59c1750f8c, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &557143895
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,6 +1162,7 @@ GameObject:
   - component: {fileID: 728395766}
   - component: {fileID: 728395769}
   - component: {fileID: 728395770}
+  - component: {fileID: 728395771}
   m_Layer: 0
   m_Name: 6
   m_TagString: Untagged
@@ -1263,6 +1302,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectGameControl: {fileID: 661831168}
   thisCell: {fileID: 728395764}
+--- !u!111 &728395771
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 728395764}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 9605be7a27172034494f3391d57e3e7f, type: 2}
+  - {fileID: 7400000, guid: 14eae988fc7160c4ea26c107f886aa89, type: 2}
+  - {fileID: 7400000, guid: e27563c3d2508df4d8571d6daa9bb8f6, type: 2}
+  - {fileID: 7400000, guid: a13dfedbcdb92714bbcf1b59c1750f8c, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &765451760
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,6 +1613,7 @@ GameObject:
   - component: {fileID: 902562046}
   - component: {fileID: 902562049}
   - component: {fileID: 902562050}
+  - component: {fileID: 902562051}
   m_Layer: 0
   m_Name: 3
   m_TagString: Untagged
@@ -1695,6 +1753,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectGameControl: {fileID: 661831168}
   thisCell: {fileID: 902562044}
+--- !u!111 &902562051
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 902562044}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 9605be7a27172034494f3391d57e3e7f, type: 2}
+  - {fileID: 7400000, guid: 14eae988fc7160c4ea26c107f886aa89, type: 2}
+  - {fileID: 7400000, guid: e27563c3d2508df4d8571d6daa9bb8f6, type: 2}
+  - {fileID: 7400000, guid: a13dfedbcdb92714bbcf1b59c1750f8c, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &934822709
 GameObject:
   m_ObjectHideFlags: 0
@@ -1708,6 +1784,7 @@ GameObject:
   - component: {fileID: 934822711}
   - component: {fileID: 934822714}
   - component: {fileID: 934822715}
+  - component: {fileID: 934822716}
   m_Layer: 0
   m_Name: 7
   m_TagString: Untagged
@@ -1847,6 +1924,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectGameControl: {fileID: 661831168}
   thisCell: {fileID: 934822709}
+--- !u!111 &934822716
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 934822709}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 9605be7a27172034494f3391d57e3e7f, type: 2}
+  - {fileID: 7400000, guid: 14eae988fc7160c4ea26c107f886aa89, type: 2}
+  - {fileID: 7400000, guid: e27563c3d2508df4d8571d6daa9bb8f6, type: 2}
+  - {fileID: 7400000, guid: a13dfedbcdb92714bbcf1b59c1750f8c, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1022712224
 GameObject:
   m_ObjectHideFlags: 0
@@ -2022,6 +2117,7 @@ GameObject:
   - component: {fileID: 1155925473}
   - component: {fileID: 1155925476}
   - component: {fileID: 1155925477}
+  - component: {fileID: 1155925478}
   m_Layer: 0
   m_Name: 8
   m_TagString: Untagged
@@ -2161,6 +2257,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectGameControl: {fileID: 661831168}
   thisCell: {fileID: 1155925471}
+--- !u!111 &1155925478
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1155925471}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 9605be7a27172034494f3391d57e3e7f, type: 2}
+  - {fileID: 7400000, guid: 14eae988fc7160c4ea26c107f886aa89, type: 2}
+  - {fileID: 7400000, guid: e27563c3d2508df4d8571d6daa9bb8f6, type: 2}
+  - {fileID: 7400000, guid: a13dfedbcdb92714bbcf1b59c1750f8c, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1294058339
 GameObject:
   m_ObjectHideFlags: 0
@@ -2418,7 +2532,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -12.499996, y: -12.499996}
+  m_AnchoredPosition: {x: -12.499992, y: -12.499996}
   m_SizeDelta: {x: -25, y: -25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1337428948
@@ -2983,7 +3097,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -12.499996, y: -12.5}
+  m_AnchoredPosition: {x: -12.499992, y: -12.5}
   m_SizeDelta: {x: -25, y: -25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1596798072
@@ -3183,6 +3297,7 @@ GameObject:
   - component: {fileID: 1657580216}
   - component: {fileID: 1657580219}
   - component: {fileID: 1657580220}
+  - component: {fileID: 1657580221}
   m_Layer: 0
   m_Name: 2
   m_TagString: Untagged
@@ -3322,6 +3437,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectGameControl: {fileID: 661831168}
   thisCell: {fileID: 1657580214}
+--- !u!111 &1657580221
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1657580214}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 9605be7a27172034494f3391d57e3e7f, type: 2}
+  - {fileID: 7400000, guid: 14eae988fc7160c4ea26c107f886aa89, type: 2}
+  - {fileID: 7400000, guid: e27563c3d2508df4d8571d6daa9bb8f6, type: 2}
+  - {fileID: 7400000, guid: a13dfedbcdb92714bbcf1b59c1750f8c, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1718355627
 GameObject:
   m_ObjectHideFlags: 0
@@ -3440,7 +3573,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -12.499996, y: -12.499992}
+  m_AnchoredPosition: {x: -12.499992, y: -12.499992}
   m_SizeDelta: {x: -25, y: -25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1729225470
@@ -3565,6 +3698,7 @@ GameObject:
   - component: {fileID: 1957394543}
   - component: {fileID: 1957394546}
   - component: {fileID: 1957394547}
+  - component: {fileID: 1957394548}
   m_Layer: 0
   m_Name: 1
   m_TagString: Untagged
@@ -3704,6 +3838,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectGameControl: {fileID: 661831168}
   thisCell: {fileID: 1957394541}
+--- !u!111 &1957394548
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1957394541}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 9605be7a27172034494f3391d57e3e7f, type: 2}
+  - {fileID: 7400000, guid: 14eae988fc7160c4ea26c107f886aa89, type: 2}
+  - {fileID: 7400000, guid: e27563c3d2508df4d8571d6daa9bb8f6, type: 2}
+  - {fileID: 7400000, guid: a13dfedbcdb92714bbcf1b59c1750f8c, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1959888707
 GameObject:
   m_ObjectHideFlags: 0
@@ -4072,8 +4224,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: c24d304f96565c94d95fd55afaa45a40, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
